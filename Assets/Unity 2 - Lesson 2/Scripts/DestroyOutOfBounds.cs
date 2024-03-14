@@ -23,6 +23,7 @@ public class Des : MonoBehaviour
         }
         else if (transform.position.z < BotBound)
         {
+            Debug.Log("GameOver");
             Destroy(gameObject);
         }
         

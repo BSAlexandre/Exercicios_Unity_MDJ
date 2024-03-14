@@ -522,6 +522,9 @@ GameObject:
   - component: {fileID: 3665174691335929049}
   - component: {fileID: 2905457395593436120}
   - component: {fileID: 5929176015626380749}
+  - component: {fileID: 8334898051448202652}
+  - component: {fileID: 3633799473163368341}
+  - component: {fileID: 3099930976354067766}
   m_Layer: 0
   m_Name: Animal_Moose_01
   m_TagString: Untagged
@@ -587,7 +590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b8ec526cad8cde41b53e3e41c6d443b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spd: 1
+  spd: 10
 --- !u!114 &5929176015626380749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -598,6 +601,66 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 244f83c61fed2454596e5a51d8db63fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &8334898051448202652
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4196949108011803929}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.102518454, y: 0.23014338, z: 0.19000047}
+  m_Center: {x: -0.007380177, y: 0.2967457, z: 0.01621657}
+--- !u!54 &3633799473163368341
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4196949108011803929}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &3099930976354067766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4196949108011803929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc6a86fe2430e62469c8ae284f88488e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4244273352005402991

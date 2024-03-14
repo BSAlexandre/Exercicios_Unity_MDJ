@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -9,37 +10,28 @@ public class PlayerController_Human : MonoBehaviour
     public float speed = 10.0f;
     public float xRange = 10f;
     public GameObject projectilePrefab;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public float projectileHeight = 1.0f;
     void Update()
     {
-
-        // Disparar o profab
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
-        
-        }
-
-        //Keep in bounds 
-
-        if (transform.position.x < -xRange)
-            {
-            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
-        }
-        if (transform.position.x > xRange)
-        {
-            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
-        }
-
-        horizontalInput = Input.GetAxis("Horizontal");
+        // Keep the player in bounds
+        float horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime);
 
+        // Clamp the player's position
+        Vector3 clampedPosition = transform.position;
+        clampedPosition.x = Mathf.Clamp(clampedPosition.x, -xRange, xRange);
+        transform.position = clampedPosition;
+
+        // Check for shooting input
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Disparar();
+        }
     }
+        void Disparar()
+        {
+            Vector3 spawnPosition = transform.position + Vector3.up * projectileHeight;
+            Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
+        }
 }
+
